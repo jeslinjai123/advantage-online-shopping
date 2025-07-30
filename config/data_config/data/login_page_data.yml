@@ -1,0 +1,6 @@
+userName: Jeslin
+password: Jeslin@123
+errorMsg:
+  - "Username field is required"
+  - "Password field is required"
+  - "Incorrect user name or password"
