@@ -9,6 +9,7 @@ import {HomePageModel} from '../config/data_config/models/home_page_model';
 const fileContents = fs.readFileSync('config/data_config/data/home_page_data.yml', 'utf8');
 const homePageData: HomePageModel = yaml.load(fileContents) as HomePageModel;
 
+
 test('Verify whether user able to add a product to cart and checkout successfully ',async({page})=>{
     let loginPage = new LoginPage(page);
     let homePage = new HomePage(page);
@@ -17,7 +18,7 @@ test('Verify whether user able to add a product to cart and checkout successfull
     await loginPage.enterUserName(homePageData.userName);
     await loginPage.enterPassword(homePageData.password);
     await loginPage.clickOnSignIn();
-    await homePage.clickOnProduct();
+    await homePage.clickOnProduct(homePageData.productName[0]);
     await homePage.addProductToCart();
     await homePage.clickOnCart();
     await homePage.clickOnCheckOut();
@@ -35,7 +36,7 @@ test('Verify whether user able to add a product to cart and checkout successfull
     let loginPage = new LoginPage(page);
     let homePage = new HomePage(page);
     await loginPage.openPage();
-    await homePage.clickOnProduct();
+    await homePage.clickOnProduct(homePageData.productName[0]);
     await homePage.addProductToCart();
     await homePage.clickOnCart(); 
     await homePage.clickOnCheckOut();

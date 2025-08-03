@@ -58,14 +58,14 @@ export default class CreateAccountPage{
     }
 
     async enterMandatoryDetails(userName:string,email:string,password:string,confirmPassword:string){
-        this.enterUserName(userName);
-        this.enterEmail(email);
-        this.enterPassword(password);
-        this.enterConfirmPassword(confirmPassword);
+        await this.enterUserName(userName);
+        await this.enterEmail(email);
+        await this.enterPassword(password);
+        await this.enterConfirmPassword(confirmPassword);
     }
 
     async clickOnTermsAndConditions(){
-        this.locator.chkBoxConditions.click();
+        await this.locator.chkBoxConditions.click();
     }
 
     async clickOnRegister(){
