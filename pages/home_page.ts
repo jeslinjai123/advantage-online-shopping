@@ -1,20 +1,24 @@
-import {Page,expect} from "@playwright/test";
+import {Page,expect,Locator} from "@playwright/test";
 import {HomePageLocators as PageLocators} from '../locators/home_page_locators';
 
 export default class HomePage{
     page:Page;
     locators:PageLocators;
+    private productContainer: Locator;
     constructor(page:Page){
         this.page = page;
         const screen = page.locator('body');
         this.locators = new PageLocators(screen);
+        this.productContainer = page.locator('.grid-table.center div');
     }
 
     /**
      * to select a product
      */
-    async clickOnProduct(){
-        await this.locators.lbl_product.click();
+    async clickOnProduct(productName:string){
+        const productItem = this.productContainer.filter({ hasText: productName });
+        const viewDetailsButton = productItem.getByText('View Details').first();
+        await viewDetailsButton.click();
     }
 
     /**

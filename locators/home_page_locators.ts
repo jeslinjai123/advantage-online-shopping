@@ -15,7 +15,6 @@ export class HomePageLocators{
     btn_login: Locator;
 
     constructor(screen:Locator){
-        this.lbl_product = screen.locator('#details_16');
         this.btn_addToCart = screen.getByRole('button',{name:'ADD TO CART'});
         this.btn_cart = screen.locator('#shoppingCartLink');
         this.btn_checkOut = screen.locator('#checkOutButton');
