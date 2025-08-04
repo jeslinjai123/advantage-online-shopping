@@ -24,6 +24,7 @@ AdvantageShoppingDemo/
 │
 ├── tests/                    # Test scripts (e.g., login, create account)
 ├── pages/                    # Page Object Model classes
+├── utility/                  # utility methods
 ├── config/
 │   └── data_config/          # Test data (YAML files)
 ├── locators/                 # for writing locators
