@@ -11,7 +11,7 @@ export default class CreateAccountPage{
 
     /**
      * to enter user name
-     * @param userName t
+     * @param userName 
      */
     async enterUserName(userName:string){
         await this.locator.txt_userName.fill(userName);
