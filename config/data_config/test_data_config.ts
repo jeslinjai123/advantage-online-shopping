@@ -1,7 +1,7 @@
 import { LoginPageModel } from "./models/login_page_model";
-import { CreateAccountModel } from "./models/create_account_model";
+import { HomePageModel } from "./models/home_page_model";
 
 export interface TestDataConfiguration {
     login: LoginPageModel;
-    createaccount: CreateAccountModel;
+    homePage: HomePageModel;
 }
